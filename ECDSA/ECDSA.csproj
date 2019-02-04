@@ -46,7 +46,7 @@
     <Compile Include="ConvertExtensions.cs" />
     <Compile Include="ECDSA.cs" />
     <Compile Include="EllepticCurve.cs" />
-    <Compile Include="Point.cs" />
+    <Compile Include="ECPoint.cs" />
     <Compile Include="PrimeNumber.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
