@@ -101,7 +101,7 @@ namespace ECDSA
         /// Возвращает случайное число заданной разрядности
         /// </summary>
         /// <param name="bits">Количество бит числа</param>
-        private static BigInteger GetBigInteger(int bits)
+        public static BigInteger GetBigInteger(int bits)
         {
             BigInteger bigNumber = 0;
             for (int i = 0; i < bits - 1; i++)

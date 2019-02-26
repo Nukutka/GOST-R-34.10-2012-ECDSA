@@ -13,21 +13,21 @@ namespace ECDSA
                 BigInteger.Parse("57896044618658097711785492504343953926634992332820282019728792003956564821041")
                 );
 
-            ECPoint point = new ECPoint(
-                 2,
-                 BigInteger.Parse("4018974056539037503335449422937059775635739389905545080690979365213431566280")
+            ECPoint P = new ECPoint(2, BigInteger.Parse("4018974056539037503335449422937059775635739389905545080690979365213431566280"));
+
+            BigInteger d = BigInteger.Parse("55441196065363246126355624130324183196576709222340016572108097750006097525544");
+
+            ECPoint Q = new ECPoint(
+                BigInteger.Parse("57520216126176808443631405023338071176630104906313632182896741342206604859403"),
+                BigInteger.Parse("17614944419213781543809391949654080031942662045363639260709847859438286763994")
                 );
-            BigInteger k = BigInteger.Parse("53854137677348463731403841147996619241504003434302020712960838528893196233395");
-            BigInteger m = BigInteger.Parse("57896044618658097711785492504343953927082934583725450622380973592137631069619");
-            BigInteger q = BigInteger.Parse("57896044618658097711785492504343953927082934583725450622380973592137631069619");
-            //ECPoint sumPoint = point;
-            //for (int i = 0; i < 1401; i++)
-            //{
-            //    sumPoint = curve.SumPoint(sumPoint, point);
-            //}
-            //Console.WriteLine(sumPoint);
-            ECPoint multPoint = curve.MultPoint(point, k);
-            Console.WriteLine(multPoint);
+
+            string msg = ECDSA.Generation(curve, P, d, "test");
+            Console.WriteLine(msg);
+            //msg = "0w" + msg;
+            bool res = ECDSA.Verification(curve, P, Q, msg);
+            if (res) Console.WriteLine("Подпись верна!");
+            else Console.WriteLine("Подпись неверна!");
         }
     }
 }

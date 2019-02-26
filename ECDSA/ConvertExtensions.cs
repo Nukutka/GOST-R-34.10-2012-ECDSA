@@ -25,6 +25,20 @@ namespace ExtensionMethods
         }
 
         /// <summary>
+        /// Выполняет преобразование 16-ричной строки в обычную
+        /// </summary>
+        /// <param name="input">16-ричная строка</param>
+        public static string ToDecString(this string input)
+        {
+            var bytes = new byte[input.Length / 2];
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                bytes[i] = Convert.ToByte(input.Substring(i * 2, 2), 16);
+            }
+            return Encoding.GetEncoding(1251).GetString(bytes);
+        }
+
+        /// <summary>
         /// Выполняется преобразование массива байт в hex строку
         /// </summary>
         /// <param name="input">Входная строка</param>

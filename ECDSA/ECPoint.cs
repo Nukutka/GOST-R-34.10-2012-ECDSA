@@ -3,6 +3,9 @@ using System.Numerics;
 
 namespace ECDSA
 {
+    /// <summary>
+    /// Точка эллиптической кривой
+    /// </summary>
     public class ECPoint
     {
         public BigInteger X { get; set; }

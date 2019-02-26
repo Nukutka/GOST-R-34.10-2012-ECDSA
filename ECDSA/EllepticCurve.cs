@@ -5,13 +5,14 @@ using System.Text;
 
 namespace ECDSA
 {
+    /// <summary>
+    /// Класс для работы с эллиптическими кривыми
+    /// </summary>
     public class EllepticCurve
     {
         public BigInteger A { get; }
         public BigInteger B { get; }
         public BigInteger P { get; }
-        //public BigInteger M { get; }
-        //public List<ECPoint> PointList { get; }
 
         /// <summary>
         /// Задает базовые параметры кривой
@@ -21,29 +22,7 @@ namespace ECDSA
             A = a;
             B = b;
             P = p;
-            //PointList = ComputePointList();
-            //M = PointList.Count;
         }
-
-        ///// <summary>
-        ///// Создает список всех точек, удовлетворяющих уравнению кривой
-        ///// </summary>
-        ///// <returns></returns>
-        //private List<ECPoint> ComputePointList()
-        //{
-        //    List<ECPoint> points = new List<ECPoint>();
-        //    for (int x = 0; x < P; x++)
-        //    {
-        //        for (int y = 0; y < P; y++)
-        //        {
-        //            if (y * y % P == (x * x * x + A * x + B) % P)
-        //            {
-        //                points.Add(new ECPoint(x, y));
-        //            }
-        //        }
-        //    }
-        //    return points;
-        //}
 
         /// <summary>
         /// Выполняет умножение точки на число
